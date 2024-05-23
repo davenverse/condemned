@@ -9,7 +9,7 @@ ThisBuild / testFrameworks += new TestFramework("munit.Framework")
 
 val catsV = "2.7.0"
 val catsEffectV = "3.3.3"
-val munitCatsEffectV = "1.0.7"
+val munitCatsEffectV = "2.0.0"
 
 
 // Projects
@@ -28,7 +28,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
       "org.typelevel"               %%% "cats-core"                  % catsV,
       "org.typelevel"               %%% "cats-effect"                % catsEffectV,
 
-      "org.typelevel"               %%% "munit-cats-effect-3"        % munitCatsEffectV         % Test,
+      "org.typelevel"               %%% "munit-cats-effect"        % munitCatsEffectV         % Test,
 
     )
   ).jsSettings(
