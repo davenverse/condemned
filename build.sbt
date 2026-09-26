@@ -13,7 +13,7 @@ ThisBuild / developers := List(
 ThisBuild / tlCiReleaseBranches := Seq()
 
 val Scala213tl = "2.13.18"
-ThisBuild / crossScalaVersions := Seq("2.12.20",  Scala213tl, "3.3.8")
+ThisBuild / crossScalaVersions := Seq(Scala213tl, "3.3.8")
 ThisBuild / scalaVersion := Scala213tl
 
 // Compiler settings DavenversePlugin injected globally. sbt-typelevel-ci-release
@@ -34,14 +34,14 @@ ThisBuild / scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) m
 })
 
 
-val Scala213 = "2.13.7"
+val Scala213 = "2.13.18"
 
 
 ThisBuild / testFrameworks += new TestFramework("munit.Framework")
 
-val catsV = "2.7.0"
-val catsEffectV = "3.3.3"
-val munitCatsEffectV = "1.0.7"
+val catsV = "2.13.0"
+val catsEffectV = "3.7.1"
+val munitCatsEffectV = "2.2.1"
 
 
 // Projects
@@ -59,7 +59,7 @@ lazy val core = crossProject(JVMPlatform, JSPlatform)
       "org.typelevel"               %%% "cats-core"                  % catsV,
       "org.typelevel"               %%% "cats-effect"                % catsEffectV,
 
-      "org.typelevel"               %%% "munit-cats-effect-3"        % munitCatsEffectV         % Test,
+      "org.typelevel"               %%% "munit-cats-effect"        % munitCatsEffectV         % Test,
 
     )
   ).jsSettings(
